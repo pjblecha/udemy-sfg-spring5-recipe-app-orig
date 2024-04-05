@@ -1,16 +1,28 @@
 package guru.springframework.domain;
 
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import java.util.UUID;
 
+@Entity
 public class UnitOfMeasure {
-    @OneToOne
-    private String uom;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private UUID id;
+    private String description;
 
-    public String getUom() {
-        return uom;
+    public UUID getId() {
+        return id;
     }
 
-    public void setUom(String uom) {
-        this.uom = uom;
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
